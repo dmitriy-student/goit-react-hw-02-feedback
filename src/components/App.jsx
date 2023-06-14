@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from './App.module.css';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Section } from 'components/Section/Section';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
@@ -31,7 +32,7 @@ export class App extends Component {
     const optionsList = Object.keys(this.state);
     const { good, neutral, bad } = this.state;
     return (
-      <>
+      <div className={css.container}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             optionsList={optionsList}
@@ -51,7 +52,7 @@ export class App extends Component {
         ) : (
           <Notification message="There is no feedback" />
         )}
-      </>
+      </div>
     );
   }
 }
